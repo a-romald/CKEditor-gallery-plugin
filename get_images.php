@@ -1,5 +1,7 @@
 <?php
-require_once 'config_db.php';
+$db = new PDO("mysql:host=localhost;dbname=db1",'user','secret');
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+$db->exec('SET CHARACTER SET utf8');
 
 if($_SERVER['HTTP_X_REQUESTED_WITH']=='XMLHttpRequest') {
     try {
